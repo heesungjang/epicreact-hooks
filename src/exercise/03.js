@@ -5,14 +5,15 @@ import * as React from 'react'
 
 function Name() {
   const [name, setName] = React.useState('')
-  const onNameChange = e => {
-    const name = e.target.value
-    setName(name)
-  }
+
   return (
     <div>
       <label htmlFor="name">Name: </label>
-      <input id="name" value={name} onChange={onNameChange} />
+      <input
+        id="name"
+        value={name}
+        onChange={event => setName(event.target.value)}
+      />
     </div>
   )
 }
